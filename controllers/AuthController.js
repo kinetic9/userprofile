@@ -9,6 +9,27 @@ userController.home = (req,res)=>{
     res.render('index',{user: req.user});
 };
 
+// Update profile
+userController.doUpdate = (req,res)=>{
+    const myquery = {username: req.user.username};
+    const newvalues = { 
+        $set: {
+            age: req.body.age, 
+            name: req.body.name,
+            surname: req.body.surname, 
+            degree: req.body.degree,
+            course: req.body.course
+    }};
+    User.updateOne(myquery, newvalues, (err,res)=>{
+        if(err){
+            return res.render('index',{user: user});
+        }
+
+        console.log("Profile updated..");
+        res.redirect('/');
+    });
+};
+
 // Goto registration page
 userController.register = (req,res)=>{
     res.render('register');
