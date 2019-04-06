@@ -5,6 +5,9 @@ const auth = require('../controllers/AuthController');
 //restrict index for logged in user only
 router.get('/',auth.home);
 
+//route to update user info
+router.post('/',auth.doUpdate);
+
 //route to register page
 router.get('/register',auth.register);
 
