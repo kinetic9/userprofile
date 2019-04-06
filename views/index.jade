@@ -3,6 +3,18 @@ extends layout
 block content
   if(user)
     h1 Dashboard
+    div.container
+      form.form-signin(role="form", action="/",method="post",style='max-width:300px;')
+            h2.form-signin-heading Edit Profile
+            input.form-control(type='text',name='name',value="${user.name}")
+            input.form-control(type='text',name='surname',value="${user.surname}")
+            input.form-control(type="text",name='username',value="${user.username}")
+            input.form-control(type="text",name='age',value="${user.age}")
+            input.form-control(type="text",name='degree',value="${user.degree}")
+            input.form-control(type="text",name='course',value="${user.course}")
+            button.btn.btn-lg.btn-primary.btn-block(type="submit") Update
   if(!user)
     h1 Auth App
   
+Create a sign in system when the user can edit his profile and save it and then log out. Assume the user is a student, he should be able to change his name, 
+surname ,age, degree and his favourite course
