@@ -26,10 +26,11 @@ userController.doUpdate = (req,res)=>{
         }
         else{
             console.log("Profile updated..");
-            res.redirect('/');
+            
         }
  
     });
+    res.redirect('/');
 };
 
 // Goto registration page
