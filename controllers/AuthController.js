@@ -24,9 +24,11 @@ userController.doUpdate = (req,res)=>{
         if(err){
             return res.render('index',{user: user});
         }
-
-        console.log("Profile updated..");
-        res.redirect('/');
+        else{
+            console.log("Profile updated..");
+            res.redirect('/');
+        }
+ 
     });
 };
 
@@ -40,6 +42,7 @@ userController.doRegister = (req,res) =>{
     User.register(new User({username: req.body.username, name: req.body.name}),
     req.body.password, (err,user)=>{
         if(err){
+            console.log(err);
             return res.render('register',{user: user});
         }
 

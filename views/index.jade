@@ -6,11 +6,11 @@ block content
     div.container
       form.form-signin(role="form", action="/",method="post",style='max-width:300px;')
             h2.form-signin-heading Edit Profile
-            input.form-control(type='text',name='name',value="${user.name}")
-            input.form-control(type='text',name='surname',value="${user.surname}")
-            input.form-control(type="text",name='age',value="${user.age}")
-            input.form-control(type="text",name='degree',value="${user.degree}")
-            input.form-control(type="text",name='course',value="${user.course}")
+            input.form-control(type='text',name='name',placeholder="Name", value= user.name)
+            input.form-control(type='text',name='surname',placeholder="Surname",value= user.surname)
+            input.form-control(type="text",name='age',placeholder="Age",value=user.age)
+            input.form-control(type="text",name='degree',placeholder="Degree",value=user.degree)
+            input.form-control(type="text",name='course',placeholder="Favourite Course",value=user.course)
             button.btn.btn-lg.btn-primary.btn-block(type="submit") Update
   if(!user)
     h1 Auth App
